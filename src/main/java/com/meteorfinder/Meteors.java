@@ -41,4 +41,10 @@ public class Meteors {
         }
         return filteredMeteors;
     }
+
+    public void displayMeteor(Meteor meteor) {
+        System.out.println("Meteor name: " + meteor.getName() + "\nMeteor Location [lat, long]: [" + meteor.getReclat() + ", " + meteor.getReclong() + "]");
+        System.out.println("Crash Year: " + meteor.getYear().substring(0,4));
+        System.out.println("----------------------------------------------------------");
+    }
 }
