@@ -20,7 +20,7 @@ public class Meteors {
             JsonArray jsonArr = g.fromJson(reader, JsonArray.class);
             for (JsonElement jsonElem : jsonArr) {
                 Meteor meteor = g.fromJson(jsonElem, Meteor.class);
-                meteors.add(meteor);   
+                meteors.add(meteor);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -45,6 +45,7 @@ public class Meteors {
     public void displayMeteor(Meteor meteor) {
         System.out.println("Meteor name: " + meteor.getName() + "\nMeteor Location [lat, long]: [" + meteor.getReclat() + ", " + meteor.getReclong() + "]");
         System.out.println("Crash Year: " + meteor.getYear().substring(0,4));
+        System.out.println("Mass (grams): " + meteor.getMass());
         System.out.println("----------------------------------------------------------");
     }
 }

@@ -1,5 +1,7 @@
 package com.meteorfinder;
 
+import java.io.IOException;
+
 public class Meteor {
     /**
      * {"name":"Aachen",
@@ -29,13 +31,17 @@ public class Meteor {
     }
     public int getID() {
         return this.id;
-    }public String getNameType() {
+    }
+    public String getNameType() {
         return this.nametype;
-    }public String getRecclass() {
+    }
+    public String getRecclass() {
         return this.recclass;
-    }public double getMass() {
+    }
+    public double getMass() {
         return this.mass;
-    }public String getFall() {
+    }
+    public String getFall() {
         return this.fall;
     }
     public String getYear() {
@@ -47,7 +53,13 @@ public class Meteor {
     public double getReclong(){
         return this.reclong;
     }
-    // public String getGeolocation(){
-    //     return this.geolocation;
-    // }
+    public void searchMeteor(){
+        String search = "start chrome https://www.google.com/search?q=";
+        search += this.getName().replaceAll("\\s", "+");
+        try {
+            Runtime.getRuntime().exec(new String[]{"cmd", "/c", search+="+meteorite"});
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
