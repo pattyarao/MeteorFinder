@@ -8,16 +8,15 @@ import java.io.IOException;
  */
 public class App 
 {
-   
     public static void main( String[] args )
     {
         Meteors meteors = new Meteors();
-        String year = "1879";
+        String year = "2001";
         if(meteors.getMeteorsByDate(year).isEmpty()) {
             System.out.println("There are no record of a meteor falling on Earth at that year.");
         } else {
             for(Meteor meteor : meteors.getMeteorsByDate(year)) {
-                meteors.displayMeteor(meteor);
+                meteors.displayMeteor(meteor);  
                 meteor.searchMeteor();
             } 
         }
